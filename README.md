@@ -139,7 +139,7 @@ device.pressBack();
 
 ### 7. Click the menu icon in the top-right corner.
 
-Same as [Step 1](#1. Click the menu icon in the top-right corner.).
+Same as [Step 1](#1-click-the-menu-icon-in-the-top-right-corner).
 
 ### 8. Click "Shifts".
 
