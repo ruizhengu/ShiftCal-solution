@@ -9,6 +9,8 @@ import static androidx.test.espresso.matcher.ViewMatchers.withId;
 import static androidx.test.espresso.matcher.ViewMatchers.withText;
 import static androidx.test.platform.app.InstrumentationRegistry.getInstrumentation;
 
+import android.graphics.Point;
+
 import androidx.test.ext.junit.rules.ActivityScenarioRule;
 import androidx.test.uiautomator.By;
 import androidx.test.uiautomator.UiDevice;
@@ -35,53 +37,39 @@ public class TestSuite {
     public void setShifts() {
         // 1. Click the menu icon in the top-right corner.
         onView(withId(R.id.btnPopup)).perform(click());
-//        device.findObject(By.res("de.nulide.shiftcal:id/btnPopup")).click();
-//        device.wait(Until.findObject(By.text("Employers")), 5000);
         // 2. Click "Employers".
         onView(withText("Employers")).perform(click());
-//        device.findObject(By.text("Employers")).click();
-//        device.wait(Until.findObject(By.res("de.nulide.shiftcal:id/fabAddEmployer")), 5000);
         // 3. Click the + icon on the bottom-right corner.
         onView(withId(R.id.fabAddEmployer)).perform(click());
-//        device.findObject(By.res("de.nulide.shiftcal:id/fabAddEmployer")).click();
-//        device.wait(Until.findObject(By.res("de.nulide.shiftcal:id/textView3")), 5000);
         // 4. Enter "Sheffield" in the Name field (then press enter on the keyboard).
         onView(withId(R.id.scEditTextName)).perform(typeText("Sheffield"));
-//        device.findObject(By.res("de.nulide.shiftcal:id/scEditTextName")).setText("Sheffield");
         device.pressEnter();
         // 5. Click the ✓ icon.
         onView(withId(R.id.fabDoneEmployer)).perform(click());
-//        device.findObject(By.res("de.nulide.shiftcal:id/fabDoneEmployer")).click();
         // 6. Press back to return to the homepage.
-//        pressBack();
-        device.pressBack();
+        pressBack();
         // 7. Click the menu icon in the top-right corner.
         onView(withId(R.id.btnPopup)).perform(click());
         // 8. Click "Shifts".
         onView(withText("Shifts")).perform(click());
-//        device.findObject(By.text("Shifts")).click();
-//        device.wait(Until.findObject(By.res("de.nulide.shiftcal:id/fabAddShift")), 5000);
         // 9. Click the + icon on the bottom-right corner.
         onView(withId(R.id.fabAddShift)).perform(click());
-//        device.findObject(By.res("de.nulide.shiftcal:id/fabAddShift")).click();
-//        device.wait(Until.findObject(By.res("de.nulide.shiftcal:id/scEditTextName")), 5000);
         // 10. Enter "Weekday" in the Name field.
         onView(withId(R.id.scEditTextName)).perform(typeText("Weekday"));
-//        device.findObject(By.res("de.nulide.shiftcal:id/scEditTextName")).setText("Weekday");
         // 11. Enter "WD" in the Short Name field.
         onView(withId(R.id.scEditTextSName)).perform(typeText("WD"));
         // 12. Click the button of Start Time, click 9 then click OK.
         onView(withId(R.id.btnStartTime)).perform(click());
-        device.wait(Until.findObject(By.res("android:id/time_header")), 5000);
         device.findObject(By.desc("9")).click();
         device.wait(Until.findObject(By.desc("30")), 5000);
         device.findObject(By.text("OK")).click();
+        device.wait(Until.findObject(By.res("de.nulide.shiftcal:id/btnEndTime")), 5000);
         // 13. Click the button of End Time, click 17 then click OK.
         onView(withId(R.id.btnEndTime)).perform(click());
-        device.wait(Until.findObject(By.res("android:id/time_header")), 5000);
         device.findObject(By.desc("17")).click();
         device.wait(Until.findObject(By.desc("30")), 5000);
         device.findObject(By.text("OK")).click();
+        device.wait(Until.findObject(By.res("de.nulide.shiftcal:id/fabDoneShift")), 5000);
         // 14. Click the ✓ icon.
         onView(withId(R.id.fabDoneShift)).perform(click());
         // 15. Press back to return to the homepage.
