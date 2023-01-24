@@ -440,7 +440,7 @@ Same as [Step 19](#19-click-date-30-of-january-2023).
 
 ### 25. Click the ✓ icon.
 
-Same as [Step 20](#20-click-the-icon).
+Same as [Step 20](#20-click-the ✓ icon).
 
 ### 26. Click the menu icon in the top-right corner.
 
