@@ -4,6 +4,7 @@ import static androidx.test.espresso.Espresso.onView;
 import static androidx.test.espresso.Espresso.pressBack;
 import static androidx.test.espresso.action.ViewActions.click;
 import static androidx.test.espresso.action.ViewActions.longClick;
+import static androidx.test.espresso.action.ViewActions.pressImeActionButton;
 import static androidx.test.espresso.action.ViewActions.typeText;
 import static androidx.test.espresso.matcher.ViewMatchers.withId;
 import static androidx.test.espresso.matcher.ViewMatchers.withText;
@@ -48,8 +49,8 @@ public class FeatureTest {
         // 3. Click the + icon on the bottom-right corner.
         onView(withId(R.id.fabAddEmployer)).perform(click());
         // 4. Enter "Sheffield" in the Name field (then press enter on the keyboard).
-        onView(withId(R.id.scEditTextName)).perform(typeText("Sheffield"));
-        device.pressEnter();
+        onView(withId(R.id.scEditTextName)).perform(typeText("Sheffield")).perform(pressImeActionButton());
+//        device.pressEnter();
         // 5. Click the ✓ icon.
         onView(withId(R.id.fabDoneEmployer)).perform(click());
 

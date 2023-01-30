@@ -97,7 +97,26 @@ device.findObject(By.res("de.nulide.shiftcal:id/scEditTextName")).setText("Sheff
 
 #### 4.2 Press enter
 
-Option: UIAutomator
+Option: Espresso & UIAutomator
+
+**Espresso**
+
+Extending the Espresso code of **4.1**.
+
+```java
+// pressing enter key
+onView(withId(R.id.scEditTextName)).perform(typeText("Sheffield")).perform(ViewActions.pressKey(KeyEvent.KEYCODE_ENTER));
+// pressing the current action button on the Input Method Editor, in this case, pressing enter
+onView(withId(R.id.scEditTextName)).perform(typeText("Sheffield")).perform(pressImeActionButton());
+```
+
+Closing the keyboard is also feasible.
+
+```java
+closeSoftKeyboard();
+```
+
+**UIAutomator**
 
 ```java
 device.pressEnter();

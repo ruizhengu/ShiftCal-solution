@@ -10,7 +10,9 @@ import static androidx.test.espresso.matcher.ViewMatchers.withText;
 import static androidx.test.platform.app.InstrumentationRegistry.getInstrumentation;
 
 import android.graphics.Point;
+import android.view.KeyEvent;
 
+import androidx.test.espresso.action.ViewActions;
 import androidx.test.ext.junit.rules.ActivityScenarioRule;
 import androidx.test.uiautomator.By;
 import androidx.test.uiautomator.UiDevice;
@@ -42,8 +44,7 @@ public class TestSuite {
         // 3. Click the + icon on the bottom-right corner.
         onView(withId(R.id.fabAddEmployer)).perform(click());
         // 4. Enter "Sheffield" in the Name field (then press enter on the keyboard).
-        onView(withId(R.id.scEditTextName)).perform(typeText("Sheffield"));
-        device.pressEnter();
+        onView(withId(R.id.scEditTextName)).perform(typeText("Sheffield")).perform(ViewActions.pressKey(KeyEvent.KEYCODE_ENTER));
         // 5. Click the ✓ icon.
         onView(withId(R.id.fabDoneEmployer)).perform(click());
         // 6. Press back to return to the homepage.
