@@ -336,6 +336,7 @@ onView(withId(R.id.fabDoneShift)).perform(click());
 
 ```java
 device.findObject(By.res("de.nulide.shiftcal:id/fabDoneShift")).click();
+device.wait(Until.findObject(By.res("de.nulide.shiftcal:id/fabAddShift")), 5000);
 ```
 
 ### 15. Press back to return to the homepage.
