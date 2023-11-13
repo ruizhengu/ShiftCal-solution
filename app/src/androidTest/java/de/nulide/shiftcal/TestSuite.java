@@ -67,7 +67,7 @@ public class TestSuite {
         device.findObject(By.text("OK")).click();
         device.wait(Until.findObject(By.res("de.nulide.shiftcal:id/btnEndTime")), 5000);
         // 13. Click the button of End Time, click 17 then click OK - UI Automator
-        device.findObject(By.res("de.nulide.shiftcal:id/btnStartTime")).click();
+        device.findObject(By.res("de.nulide.shiftcal:id/btnEndTime")).click();
         device.wait(Until.findObject(By.res("android:id/time_header")), 5000);
         device.findObject(By.desc("17")).click();
         device.wait(Until.findObject(By.desc("30")), 5000);
